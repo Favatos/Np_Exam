@@ -16,5 +16,5 @@ public class Player
         Symbol = symbol;    
     }
 
-    public override string ToString() => $"{Name} {IPEndPoint}";
+    public override string ToString() => $"{Name} {Symbol} {IPEndPoint}";
 }

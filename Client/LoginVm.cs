@@ -2,8 +2,8 @@
 
 public class LoginVM
 {
-    public string Host { get; set; } = "";
-    public int Port { get; set; }
+    public string Host { get; set; } = "localhost";
+    public int Port { get; set; } = 2025;
     public string Name { get; set; } = "";
 }
 

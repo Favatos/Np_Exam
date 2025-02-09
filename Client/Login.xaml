@@ -5,19 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Client"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <UniformGrid Columns="1">
-        <TextBlock>IP сервера:</TextBlock>
-        <TextBox Text="{Binding Host}" />
+        Title="Login" Height="450" Width="350" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <TextBlock>Порт:</TextBlock>
-        <TextBox Text="{Binding Port}" />
+        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"> Server IP:</TextBlock>
+        <TextBox x:Name="t1" Width="150" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Host}" />
 
-        <TextBlock>Как вас зовут?</TextBlock>
-        <TextBox Text="{Binding Name}" />
+        <TextBlock Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Port:</TextBlock>
+        <TextBox x:Name="t2" Width="150" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Port}" />
 
-        <Button Padding="5" Click="ButtonConnect_Click">
-            Подключиться к чату
+        <TextBlock Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">What is your name?</TextBlock>
+        <TextBox x:Name="t3" Width="150" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Name}" />
+
+        <Button Grid.Row="3" Grid.ColumnSpan="2" Margin="30" Click="ButtonConnect_Click">
+            Connect to the game
         </Button>
-    </UniformGrid>
+    </Grid>
 </Window>
